@@ -1,0 +1,107 @@
+------------------------------------------------------------------------------
+
+This is the README file of the IgH EtherCAT Master.
+
+$Id: README,v af3eda069078 2011/10/28 09:31:54 fp $
+
+vim: spelllang=en spell tw=78
+
+------------------------------------------------------------------------------
+
+Contents:
+1) General Information
+2) Requirements
+3) Building and installing
+4) Realtime & Tuning
+5) License
+6) Coding Style
+
+------------------------------------------------------------------------------
+
+1) General Information
+======================
+
+This is an open-source EtherCAT master implementation for Linux 2.6.
+
+See the FEATURES file for a list of features. For more information, see
+http://etherlab.org/en/ethercat.
+
+or contact
+
+Dipl.-Ing. (FH) Florian Pose <fp@igh-essen.com>
+Ingenieurgemeinschaft IgH
+Heinz-Baecker-Str. 34
+D-45356 Essen
+http://igh-essen.com
+
+------------------------------------------------------------------------------
+
+2) Requirements
+===============
+
+1) Software requirements
+
+Configured sources for the Linux 2.6 kernel are required to build the EtherCAT
+master.
+
+2) Hardware requirements
+
+A table of supported hardware can be found at
+http://etherlab.org/en/ethercat/hardware.php.
+
+------------------------------------------------------------------------------
+
+3) Building and installing
+==========================
+
+See the INSTALL file.
+
+------------------------------------------------------------------------------
+
+4) Realtime & Tuning
+====================
+
+Realtime patches for the Linux kernel are supported, but not required. The
+realtime processing has to be done by the calling module (see API
+documentation). The EtherCAT master code itself is passive (except for the
+idle mode and EoE).
+
+To avoid frame timeouts, deactivating DMA access for hard drives is
+recommended (hdparm -d0 <DEV>).
+
+------------------------------------------------------------------------------
+
+5) License
+==========
+
+Copyright (C) 2006-2009  Florian Pose, Ingenieurgemeinschaft IgH
+
+This file is part of the IgH EtherCAT Master.
+
+The IgH EtherCAT Master is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License version 2, as
+published by the Free Software Foundation.
+
+The IgH EtherCAT Master is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along with
+the IgH EtherCAT Master; if not, write to the Free Software Foundation, Inc.,
+51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+---
+
+The license mentioned above concerns the source code only. Using the EtherCAT
+technology and brand is only permitted in compliance with the industrial
+property and similar rights of Beckhoff Automation GmbH.
+
+------------------------------------------------------------------------------
+
+6) Coding Style
+===============
+
+Developers shall use the coding style rules in the CodingStyle.txt file.
+
+------------------------------------------------------------------------------

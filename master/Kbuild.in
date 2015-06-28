@@ -1,0 +1,108 @@
+#------------------------------------------------------------------------------
+#
+#  $Id$
+#
+#  Copyright (C) 2006-2012  Florian Pose, Ingenieurgemeinschaft IgH
+#
+#  This file is part of the IgH EtherCAT Master.
+#
+#  The IgH EtherCAT Master is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License version 2, as
+#  published by the Free Software Foundation.
+#
+#  The IgH EtherCAT Master is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+#  Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with the IgH EtherCAT Master; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+#  ---
+#
+#  The license mentioned above concerns the source code only. Using the EtherCAT
+#  technology and brand is only permitted in compliance with the industrial
+#  property and similar rights of Beckhoff Automation GmbH.
+#
+#  ---
+#
+#  vi: syntax=make
+#
+#------------------------------------------------------------------------------
+
+obj-m := ec_master.o
+
+ec_master-objs := \
+	cdev.o \
+	coe_emerg_ring.o \
+	datagram.o \
+	datagram_pair.o \
+	device.o \
+	domain.o \
+	fmmu_config.o \
+	foe_request.o \
+	fsm_change.o \
+	fsm_coe.o \
+	fsm_foe.o \
+	fsm_master.o \
+	fsm_pdo.o \
+	fsm_pdo_entry.o \
+	fsm_sii.o \
+	fsm_slave.o \
+	fsm_slave_config.o \
+	fsm_slave_scan.o \
+	fsm_soe.o \
+	ioctl.o \
+	mailbox.o \
+	master.o \
+	module.o \
+	pdo.o \
+	pdo_entry.o \
+	pdo_list.o \
+	reg_request.o \
+	sdo.o \
+	sdo_entry.o \
+	sdo_request.o \
+	slave.o \
+	slave_config.o \
+	soe_errors.o \
+	soe_request.o \
+	sync.o \
+	sync_config.o \
+	voe_handler.o
+
+ifeq (@ENABLE_EOE@,1)
+ec_master-objs += ethernet.o
+endif
+
+ifeq (@ENABLE_DEBUG_IF@,1)
+ec_master-objs += debug.o
+endif
+
+ifeq (@ENABLE_RTDM@,1)
+
+ec_master-objs += rtdm.o
+
+ifeq (@ENABLE_XENOMAI@, 1)
+CFLAGS_rtdm.o := -I@XENOMAI_DIR@/include
+endif
+
+ifeq (@ENABLE_RTAI@, 1)
+CFLAGS_rtdm.o := -I@RTAI_DIR@/include
+endif
+
+ec_master-objs += rtdm-ioctl.o
+CFLAGS_rtdm-ioctl.o := -DEC_IOCTL_RTDM
+
+endif # ENABLE_RTDM
+
+REV := $(shell if test -s $(src)/../revision; then \
+		cat $(src)/../revision; \
+	else \
+		hg id -i $(src)/.. 2>/dev/null || echo "unknown"; \
+	fi)
+
+CFLAGS_module.o := -DREV=$(REV)
+
+#------------------------------------------------------------------------------

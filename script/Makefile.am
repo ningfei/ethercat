@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------------
+#
+#  Makefile.am
+#
+#  IgH EtherCAT master
+#
+#  $Id: Makefile.am,v 543ba57580af 2012/01/10 11:06:22 fp $
+#
+#  Copyright (C) 2006-2008  Florian Pose, Ingenieurgemeinschaft IgH
+#
+#  This file is part of the IgH EtherCAT Master.
+#
+#  The IgH EtherCAT Master is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License version 2, as
+#  published by the Free Software Foundation.
+#
+#  The IgH EtherCAT Master is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+#  Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with the IgH EtherCAT Master; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+#  ---
+#
+#  The license mentioned above concerns the source code only. Using the
+#  EtherCAT technology and brand is only permitted in compliance with the
+#  industrial property and similar rights of Beckhoff Automation GmbH.
+#
+#------------------------------------------------------------------------------
+
+SUBDIRS = init.d sysconfig
+
+sbin_SCRIPTS = ethercatctl
+
+systemddir = $(libdir)/systemd/system
+systemd_DATA = ethercat.service
+
+dist_sysconf_DATA = ethercat.conf
+
+EXTRA_DIST = \
+	ethercatctl.in \
+	ethercat.service.in \
+	ifup-eoe.sh
+
+BUILT_SOURCES = \
+	ethercatctl \
+	ethercat.service
+
+#------------------------------------------------------------------------------

@@ -1,0 +1,74 @@
+-------------------------------------------------------------------------------
+
+EtherCAT master TODO
+
+$Id: TODO,v 1f03f2543fc3 2013/02/08 19:03:37 fp $
+
+vim700: spelllang=en spell
+
+-------------------------------------------------------------------------------
+
+Future issues:
+
+• Remove fprintf() calls from user-space library (define return codes).
+• Move SII request to slave FSM.
+• Move SDO request to slave FSM.
+• Simplify slave FSM by introducing a common request state to handle external
+  requests.
+* Fix link detection in generic driver.
+* Remove allow_scanning flag.
+* Check for Enable SDO Complete Access flag.
+* Do not output 'SDO does not exist' when querying data type.
+* recompile tool/CommandVersion.cpp if revision changes.
+* Log SoE IDNs with real name ([SP]-x-yyyy).
+* Only output watchdog config if not default.
+* Implement CompleteAccess for SDO uploads.
+* Output warning when send_ext() is called in illegal context.
+* Implement ecrt_slave_config_request_state().
+* Remove default buffer size in SDO upload.
+* Override sync manager size?
+* Show Record / Array / List type of SDOs.
+* Distributed clocks:
+    - Use vendor correction factors when calculating transmission delays.
+    - Skip setting system time offset when application detached.
+    - How to use the SYNC1 shift time?
+    - Do not output graph, if topology calculation failed.
+    - Check if register 0x0980 is working, to avoid clearing it when
+      configuring.
+* Mailbox protocol handlers.
+* Mailbox state machine using toggle bits.
+* External memory for SDO transfers.
+* Move master threads, slave handlers and state machines into a user
+  space daemon.
+* Allow master requesting when in ORPHANED phase
+* Mailbox gateway.
+* Separate CoE debugging.
+* Evaluate EEPROM contents after writing.
+* Optimize alignment of process data.
+* Interface/buffers for asynchronous domain IO.
+* Make scanning and configuration run parallel (each).
+* ethercat tool:
+    - Add a -n (numeric) switch.
+	- Check for unwanted options.
+    - Fix number of digits in negative integer hex output.
+    - Data type abbreviations.
+    - Add -x switch for hex display.
+    - Implement --output-file argument in foe_read.
+    - Implement indent in 'ethercat ma'
+    - Implement 0xXXXX:YY format for specifying SDOs.
+    - Implement reading from stream for soe_write.
+    - Output error after usage.
+* Fix bus scan hang when calling ecrt_master_deactivate().
+
+Smaller issues:
+
+* Read out CRC counters.
+* Configure slave ports to automatically open on link detection.
+* Fix datagram errors on application loading/unloading.
+
+Less important issues:
+
+* Allow VLAN tagging.
+* Determine number of frames, the NIC can handle.
+
+-------------------------------------------------------------------------------

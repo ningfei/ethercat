@@ -1,0 +1,1563 @@
+2013-02-12  Florian Pose  <fp@igh-essen.com>
+
+	* lib/Makefile.am:
+	Fixed missing distribution of lib/ioctl.h.
+	[4c2e37d2237c] [tip] <stable-1.5>
+
+	* include/ecrt.h, master/doxygen.c, master/foe.h, master/rtdm.c,
+	master/rtdm.h:
+	Some more doxygen documentation.
+	[6d9865c37b6f] <stable-1.5>
+
+	* examples/rtai_rtdm_dc/main.c, include/ecrt.h:
+	Improved API documentation.
+	[c5c81a52fc30] <stable-1.5>
+
+	* Doxyfile.in, include/ecrt.h, master/cdev.c, master/coe_emerg_ring.c,
+	master/coe_emerg_ring.h, master/datagram.c, master/datagram_pair.c,
+	master/datagram_pair.h, master/debug.c, master/device.c,
+	master/domain.c, master/ethernet.c, master/foe_request.c,
+	master/fsm_coe.c, master/fsm_foe.c, master/fsm_master.c,
+	master/fsm_pdo.c, master/fsm_pdo_entry.c, master/fsm_slave.c,
+	master/ioctl.c, master/master.c, master/master.h, master/module.c,
+	master/pdo.c, master/pdo_list.c, master/reg_request.c,
+	master/reg_request.h, master/rtdm.c, master/rtdm.h,
+	master/sdo_request.c, master/slave.c, master/slave.h,
+	master/slave_config.c, master/slave_config.h, master/soe_request.c,
+	master/sync.c, master/voe_handler.c:
+	Updated Doxygen documentation.
+	[ec403cf308eb] <stable-1.5>
+
+	* master/reg_request.c:
+	Removed unused prototype.
+	[3d68bb0047a1] <stable-1.5>
+
+	* NEWS, devices/8139too-3.2-ethercat.c, devices/8139too-3.2-orig.c,
+	devices/Makefile.am:
+	Added 8139too driver for kernel 3.2.
+	[e1d2c68e4293] <stable-1.5>
+
+	* NEWS, devices/8139too-3.0-ethercat.c, devices/8139too-3.0-orig.c,
+	devices/Makefile.am:
+	Added 8139too driver for kernel 3.0.
+	[0c506726e03d] <stable-1.5>
+
+	* tty/module.c:
+	TTY: termios structure was included in 'struct tty' with kernel 3.7.
+	[e5640f5e10a2] <stable-1.5>
+
+	* tty/module.c:
+	TTY ioctl() file parameter was dropped in kernel 2.6.39.
+	[b5214d8e48d1] <stable-1.5>
+
+	* master/cdev.c:
+	Replaced VM_RESERVED for kernel 3.7.
+	[3680924f6f87] <stable-1.5>
+
+2013-02-08  Florian Pose  <fp@igh-essen.com>
+
+	* TODO, documentation/ethercat_doc.tex,
+	documentation/images/architecture.svg:
+	Documented redundancy, RTDM interface and systemd usage.
+	[1f03f2543fc3] <stable-1.5>
+
+	* configure.ac:
+	Release procedure.
+	[e2257824c563] <stable-1.5>
+
+	* documentation/graphs/fsm_change.dot,
+	documentation/graphs/fsm_eoe.dot,
+	documentation/graphs/fsm_pdo_conf.dot,
+	documentation/graphs/fsm_pdo_entry_conf.dot,
+	documentation/graphs/fsm_pdo_entry_read.dot,
+	documentation/graphs/fsm_pdo_read.dot,
+	documentation/graphs/fsm_sii.dot,
+	documentation/graphs/fsm_slave_conf.dot,
+	documentation/graphs/fsm_slave_scan.dot:
+	Improved fon specifications in DOT graphs.
+	[e60c68f33e4f] <stable-1.5>
+
+	* documentation/graphs/Makefile:
+	Directly export PDFs from DOT graphs.
+	[a01947bc9ab6] <stable-1.5>
+
+2013-02-07  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS:
+	Updated NEWS file.
+	[cb03c618a9e2] <stable-1.5>
+
+2013-02-06  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_slave_scan.c:
+	Debug message.
+	[1e8d9fcb5100] <stable-1.5>
+
+	* configure.ac:
+	More detailed output of configure script.
+	[232831b6249b] <stable-1.5>
+
+	* NEWS, TODO, configure.ac, master/fsm_slave_config.c,
+	master/fsm_slave_scan.c:
+	Introduced --enable-sii-assign.
+	[6b21b3f88a9a] <stable-1.5>
+
+	* lib/slave_config.c:
+	Fixed annoying fprintf in ecrt_slave_config_emerg_pop().
+	[4ccf7634e664] <stable-1.5>
+
+2013-02-05  Florian Pose  <fp@igh-essen.com>
+
+	* TODO:
+	TODO.
+	[ab9a6e109951] <stable-1.5>
+
+	* include/ecrt.h, lib/slave_config.c, master/ioctl.c, master/ioctl.h,
+	master/slave_config.c:
+	Added ecrt_slave_config_reg_so_entry_pos() to register non-unique
+	entries.
+	[5ef3197e5e1f] <stable-1.5>
+
+	* include/ecrt.h, lib/domain.c, master/ioctl.c, master/ioctl.h:
+	Exported ecrt_domain_size() for userspace.
+	[5ef9d5b14879] <stable-1.5>
+
+	* TODO:
+	TODO.
+	[fdd4f8eb5c83] <stable-1.5>
+
+	* master/fsm_foe.c:
+	FoE datagram / fsm->datagram bugfix, thanks to R. Roesch.
+	[906ef8b1c0ec] <stable-1.5>
+
+	* master/fsm_foe.c:
+	Fixed FoE data opcode, thanks to R. Roesch.
+	[64cdc3b59d25] <stable-1.5>
+
+	* devices/e1000e/netdev-2.6.32-ethercat.c,
+	devices/e1000e/netdev-2.6.33-ethercat.c,
+	devices/e1000e/netdev-2.6.34-ethercat.c,
+	devices/e1000e/netdev-2.6.35-ethercat.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-3.2-ethercat.c,
+	devices/e1000e/netdev-3.4-ethercat.c:
+	Fixed repeating e1000e reset while link down, thanks to J. Kunz.
+	[97fd83907c7c] <stable-1.5>
+
+2013-01-11  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-3.2-ethercat.c:
+	Fixed link detection in older e1000e drivers.
+	[c350fc89afd7] <stable-1.5>
+
+2013-01-10  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, master/fsm_coe.c, master/fsm_coe.h, master/fsm_foe.c,
+	master/fsm_foe.h, master/fsm_master.c, master/fsm_pdo.c,
+	master/fsm_pdo.h, master/fsm_pdo_entry.c, master/fsm_pdo_entry.h,
+	master/fsm_slave.c, master/fsm_slave.h, master/fsm_slave_config.c,
+	master/fsm_slave_scan.c, master/fsm_soe.c, master/fsm_soe.h,
+	master/ioctl.c, master/master.c, master/master.h, master/slave.c,
+	master/slave.h:
+	Avoided io_sem locking from userspace/rtdm library.
+	[9cdd7669dc0b] <stable-1.5>
+
+	* devices/e1000e/netdev-3.4-ethercat.c:
+	Fixed link detection in e1000e driver for 3.4.
+	[505cf41488a4] <stable-1.5>
+
+	* devices/e1000e/netdev-3.2-ethercat.c:
+	Minor change.
+	[28f1e9e93a1d] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/r8169-3.4-ethercat.c,
+	devices/r8169-3.4-orig.c:
+	Added r8169 driver for kernel 3.4.
+	[7c83194a309f] <stable-1.5>
+
+2013-01-08  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000/Makefile.am, devices/e1000/e1000-3.4-ethercat.h,
+	devices/e1000/e1000-3.4-orig.h,
+	devices/e1000/e1000_ethtool-3.4-ethercat.c,
+	devices/e1000/e1000_ethtool-3.4-orig.c,
+	devices/e1000/e1000_hw-3.4-ethercat.c,
+	devices/e1000/e1000_hw-3.4-ethercat.h,
+	devices/e1000/e1000_hw-3.4-orig.c,
+	devices/e1000/e1000_hw-3.4-orig.h,
+	devices/e1000/e1000_main-3.4-ethercat.c,
+	devices/e1000/e1000_main-3.4-orig.c,
+	devices/e1000/e1000_osdep-3.4-ethercat.h,
+	devices/e1000/e1000_osdep-3.4-orig.h,
+	devices/e1000/e1000_param-3.4-ethercat.c,
+	devices/e1000/e1000_param-3.4-orig.c:
+	Added e1000 driver for kernel 3.4.
+	[d1bd39013a32] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/e100-3.4-ethercat.c,
+	devices/e100-3.4-orig.c:
+	Added e100 driver for kernel 3.4.
+	[fcd918d2122f] <stable-1.5>
+
+	* devices/e1000e/netdev-3.4-ethercat.c:
+	Improved e1000e driver for kernel 3.4.
+	[d7b1a62709af] <stable-1.5>
+
+2013-01-07  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, configure.ac, devices/e1000e/80003es2lan-3.4-ethercat.c,
+	devices/e1000e/80003es2lan-3.4-orig.c,
+	devices/e1000e/82571-3.4-ethercat.c,
+	devices/e1000e/82571-3.4-orig.c, devices/e1000e/Kbuild.in,
+	devices/e1000e/Makefile.am, devices/e1000e/Makefile.am.orig,
+	devices/e1000e/defines-3.4-ethercat.h,
+	devices/e1000e/defines-3.4-orig.h,
+	devices/e1000e/e1000-3.4-ethercat.h,
+	devices/e1000e/e1000-3.4-orig.h,
+	devices/e1000e/ethtool-3.4-ethercat.c,
+	devices/e1000e/ethtool-3.4-orig.c, devices/e1000e/hw-3.4-ethercat.h,
+	devices/e1000e/hw-3.4-orig.h, devices/e1000e/ich8lan-3.4-ethercat.c,
+	devices/e1000e/ich8lan-3.4-orig.c,
+	devices/e1000e/mac-3.4-ethercat.c, devices/e1000e/mac-3.4-orig.c,
+	devices/e1000e/manage-3.4-ethercat.c,
+	devices/e1000e/manage-3.4-orig.c,
+	devices/e1000e/netdev-3.4-ethercat.c,
+	devices/e1000e/netdev-3.4-orig.c, devices/e1000e/nvm-3.4-ethercat.c,
+	devices/e1000e/nvm-3.4-orig.c, devices/e1000e/param-3.4-ethercat.c,
+	devices/e1000e/param-3.4-orig.c, devices/e1000e/phy-3.4-ethercat.c,
+	devices/e1000e/phy-3.4-orig.c:
+	Added e1000e driver for kernel 3.4.
+	[5e9221a78855] <stable-1.5>
+
+	* NEWS, devices/8139too-3.4-ethercat.c, devices/8139too-3.4-orig.c,
+	devices/Makefile.am:
+	Added 8139too driver for kernel 3.4.
+	[6ad972f38438] <stable-1.5>
+
+2012-12-13  Florian Pose  <fp@igh-essen.com>
+
+	* configure.ac:
+	Added AM_PROG_AR necessary for autoconf 1.12.
+	[5cd99a1daa7a] <stable-1.5>
+
+2012-12-07  Florian Pose  <fp@igh-essen.com>
+
+	* master/mailbox.c, master/mailbox.h:
+	Made datagram const.
+	[c0b4c64fcebd] <stable-1.5>
+
+2012-12-06  Florian Pose  <fp@igh-essen.com>
+
+	* master/ioctl.c, master/ioctl.h:
+	Fixed some warnings on 64 bit systems.
+	[ccafdf1e261f] <stable-1.5>
+
+	* master/ioctl.c:
+	Removed unused variable.
+	[807983200019] <stable-1.5>
+
+	* master/master.c:
+	Fixed io_sem usage in queue_external_datagrams().
+	[5535603c34a0] <stable-1.5>
+
+	* master/ioctl.c:
+	Removed unnecessary semaphore uses for emergency requests.
+	[1cf54e2452c4] <stable-1.5>
+
+	* master/ioctl.c:
+	Added vmalloc() include fix for ARM architecture, thanks to Andrea
+	Scian.
+	[ec53d873dc5e] <stable-1.5>
+
+	* master/fsm_master.c, master/fsm_master.h, master/fsm_slave_config.c,
+	master/fsm_slave_config.h:
+	Do not use slaves's SoE state machine for configuration.
+	[06b53ebfa0c3] <stable-1.5>
+
+	* master/ioctl.c:
+	Added function attribute definition.
+	[c99ff159b60d] <stable-1.5>
+
+	* lib/slave_config.c:
+	Fixed format specifiers.
+	[8b1e26cc88ac] <stable-1.5>
+
+	* lib/voe_handler.c:
+	Fixed format specifiers.
+	[b7f84bebd965] <stable-1.5>
+
+	* lib/sdo_request.c:
+	Minor: Fixed format specifiers.
+	[9640948881fd] <stable-1.5>
+
+	* master/ioctl.c:
+	Fixed some ioctl() permissions.
+	[1d5ebfb7fec1] <stable-1.5>
+
+2012-12-05  Florian Pose  <fp@igh-essen.com>
+
+	* master/master.c:
+	Send sync datagrams only if reference clock is found.
+	[9a0d30056e70] <stable-1.5>
+
+	* master/fsm_master.c:
+	Minor DC debugging.
+	[9c18c29b8942] <stable-1.5>
+
+	* master/ioctl.c:
+	Fixed some ioctl() return values.
+	[fb2fe8fae501] <stable-1.5>
+
+	* devices/e1000e/netdev-2.6.32-ethercat.c,
+	devices/e1000e/netdev-2.6.33-ethercat.c,
+	devices/e1000e/netdev-2.6.34-ethercat.c,
+	devices/e1000e/netdev-2.6.35-ethercat.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-3.2-ethercat.c:
+	Fixed e1000_open() in e1000e drivers.
+	[f62b64fdbc23] <stable-1.5>
+
+	* devices/e1000e/netdev-2.6.32-ethercat.c,
+	devices/e1000e/netdev-2.6.33-ethercat.c,
+	devices/e1000e/netdev-2.6.34-ethercat.c,
+	devices/e1000e/netdev-2.6.35-ethercat.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-3.2-ethercat.c:
+	Fixed __e1000_maybe_stop_tx() for e1000e.
+	[50b861e981f7] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.20-ethercat.c,
+	devices/e1000/e1000_main-2.6.22-ethercat.c,
+	devices/e1000/e1000_main-2.6.24-ethercat.c,
+	devices/e1000/e1000_main-2.6.26-ethercat.c,
+	devices/e1000/e1000_main-2.6.27-ethercat.c,
+	devices/e1000/e1000_main-2.6.28-ethercat.c,
+	devices/e1000/e1000_main-2.6.29-ethercat.c,
+	devices/e1000/e1000_main-2.6.31-ethercat.c,
+	devices/e1000/e1000_main-2.6.32-ethercat.c,
+	devices/e1000/e1000_main-2.6.33-ethercat.c,
+	devices/e1000/e1000_main-2.6.35-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-ethercat.c,
+	devices/e1000/e1000_main-3.0-ethercat.c:
+	Fixed __e1000_maybe_stop_tx().
+	[fc64a4b1ec1a] <stable-1.5>
+
+	* master/domain.c:
+	Fixed ecrt_domain_process() broken in 71d38ff288b3.
+	[4f97d61a8671] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.24-ethercat.c,
+	devices/e1000/e1000_main-2.6.26-ethercat.c,
+	devices/e1000/e1000_main-2.6.27-ethercat.c,
+	devices/e1000/e1000_main-2.6.28-ethercat.c,
+	devices/e1000/e1000_main-2.6.29-ethercat.c,
+	devices/e1000/e1000_main-2.6.31-ethercat.c,
+	devices/e1000/e1000_main-2.6.32-ethercat.c,
+	devices/e1000/e1000_main-2.6.33-ethercat.c,
+	devices/e1000/e1000_main-2.6.35-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-ethercat.c,
+	devices/e1000/e1000_main-3.0-ethercat.c:
+	Fixed possible segfault in e1000_open() function.
+	[634ba3b1eb95] <stable-1.5>
+
+	* master/domain.c:
+	Minor change.
+	[3134b7255f3d] <stable-1.5>
+
+2012-12-04  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_master.c, master/fsm_slave.c, master/ioctl.c,
+	master/master.c, master/master.h, master/slave.c, master/slave.h:
+	Using common waitqueue for requests.
+	[74ede087bc85] <stable-1.5>
+
+	* TODO:
+	TODO.
+	[a0b686241178] <stable-1.5>
+
+	* master/fsm_master.h, master/fsm_slave.c, master/master.c,
+	master/slave.c, master/soe_request.c:
+	Removed unnecessary ec_master_soe_request_t type.
+	[35611452b785] <stable-1.5>
+
+	* master/foe_request.c, master/foe_request.h, master/fsm_master.h,
+	master/fsm_slave.c, master/ioctl.c, master/slave.c:
+	Removed unnecessary ec_master_foe_request_t; fixed FoE access.
+	[e6cc33cac6a2] <stable-1.5>
+
+	* master/domain.c:
+	Improved preprocessor macro usage reg. redundancy.
+	[71d38ff288b3] <stable-1.5>
+
+	* master/fsm_slave.c:
+	Removed unnecessary loop when dequeuing register requests.
+	[5fc035788a3a] <stable-1.5>
+
+	* master/fsm_master.h, master/fsm_slave.c, master/master.c,
+	master/slave.c:
+	Removed unnecessary ec_master_sdo_request_t.
+	[d2c48550acd0] <stable-1.5>
+
+	* master/fsm_slave.c, master/master.c, master/slave.c, master/slave.h:
+	Minor: Renamed slave_sdo_requests.
+	[611e4d745dcd] <stable-1.5>
+
+	* master/fsm_slave.c, master/slave_config.c:
+	Invalidate processing register requests when clearing configuration.
+	[8c7e674aa5d6] <stable-1.5>
+
+	* master/master.c:
+	Removed unused method.
+	[8e0bab31fddd] <stable-1.5>
+
+	* master/fsm_master.c, master/master.c:
+	Mark processing SDO request as invalid if config is cleared.
+	[30a6df891e7d] <stable-1.5>
+
+	* master/fsm_master.c, master/fsm_master.h, master/master.c:
+	Reset master state machine when going to orphaned phase.
+	[a9bbc44584e0] <stable-1.5>
+
+	* master/master.c:
+	Minor changes.
+	[c6b1c8fd20f4] <stable-1.5>
+
+2012-11-30  Florian Pose  <fp@igh-essen.com>
+
+	* master/device.c:
+	merge
+	[5cf6bb14a579] <stable-1.5>
+
+	* TODO, configure.ac, master/datagram_pair.c, master/datagram_pair.h,
+	master/device.c, master/domain.c, master/domain.h,
+	master/fsm_master.c, master/fsm_master.h, master/globals.h,
+	master/ioctl.c, master/ioctl.h, master/master.c, master/master.h,
+	master/module.c, tool/Command.cpp, tool/Command.h,
+	tool/CommandData.cpp, tool/CommandDomains.cpp,
+	tool/CommandDomains.h, tool/CommandMaster.cpp:
+	Added configure option for redundancy (--with-devices).
+	[d461b1f07296] <stable-1.5>
+
+	* tool/CommandMaster.cpp:
+	Added missing newline.
+	[abc1d1caead7] <stable-1.5>
+
+	* master/device.c:
+	Improved device member initialisation.
+	[cc852c40e299] <stable-1.5>
+
+	* master/device.h:
+	Removed unused field.
+	[c0cf0e6cff43] <stable-1.5>
+
+2012-11-29  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, lib/slave_config.c, master/fsm_slave_config.c,
+	master/globals.h, master/slave_config.c:
+	Changed the datatypes of the shift times in ecrt_slave_config_dc()
+	to int32_t to correctly display negative shift times.
+	[5db725cc40f9] <stable-1.5>
+
+2012-11-20  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_master.c, master/fsm_slave_config.c:
+	Adjusted DC clock discipline parameters.
+	[41dc9a4a0f76] <stable-1.5>
+
+	* .hgignore, configure.ac, examples/Makefile.am,
+	examples/rtai_rtdm_dc/Makefile.am, examples/rtai_rtdm_dc/main.c,
+	include/ecrt.h, lib/master.c, master/ioctl.c, master/ioctl.h,
+	master/master.c, master/master.h:
+	Added interface to select the reference clock and to sync to it.
+	Added rtai_rtdm_dc example, thanks to Graeme Foot.
+	[e93efb4af231] <stable-1.5>
+
+	* configure.ac:
+	Removed AM_PROG_AR.
+	[3425c621ee46] <stable-1.5>
+
+	* configure.ac, include/ecrt.h:
+	Added feature flag for register access.
+	[072d4c0dccd8] <stable-1.5>
+
+	* include/ecrt.h:
+	Fixed typos in doc.
+	[4b43c90142c8] <stable-1.5>
+
+2012-11-14  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, lib/Makefile.am, lib/master.c, lib/reg_request.c,
+	lib/reg_request.h, lib/slave_config.c, lib/slave_config.h,
+	master/Kbuild.in, master/Makefile.am, master/fsm_master.c,
+	master/fsm_master.h, master/fsm_slave.c, master/fsm_slave.h,
+	master/ioctl.c, master/ioctl.h, master/master.c, master/master.h,
+	master/reg_request.c, master/reg_request.h, master/slave.c,
+	master/slave.h, master/slave_config.c, master/slave_config.h,
+	tool/CommandRegRead.cpp, tool/CommandRegWrite.cpp:
+	Added interface to read/write register contents; re-worked register
+	requests.
+	[2c3ccdde3919] <stable-1.5>
+
+	* master/fsm_slave.c:
+	Immediately restart slave FSM on several failed requests.
+	[86ebf18a029f] <stable-1.5>
+
+	* master/master.c:
+	Removed state-dependent skip messages.
+	[a89481754fd5] <stable-1.5>
+
+	* master/fsm_slave.c:
+	Output slave FSM datagram statistics.
+	[341d9575745d] <stable-1.5>
+
+	* include/ecrt.h:
+	Fixed documentation of EC_REQUEST_BUSY.
+	[0f1622cdb670] <stable-1.5>
+
+2012-11-06  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, lib/slave_config.c, master/Kbuild.in,
+	master/Makefile.am, master/coe_emerg_ring.c,
+	master/coe_emerg_ring.h, master/fsm_coe.c, master/ioctl.c,
+	master/ioctl.h, master/slave_config.c, master/slave_config.h:
+	Added API for querying CoE emergency requests.
+	[9c3e629a220c] <stable-1.5>
+
+	* configure.ac:
+	Added AM_PROG_AR to configure.ac.
+	[7b8078c1ad36] <stable-1.5>
+
+2012-10-24  Florian Pose  <fp@igh-essen.com>
+
+	* tool/Command.cpp, tool/Command.h, tool/CommandPdos.cpp,
+	tool/CommandPdos.h, tool/main.cpp:
+	EtherLab skin for 'ethercat pdos' command.
+	[960cc1bb6b4a] <stable-1.5>
+
+2012-10-09  Florian Pose  <fp@igh-essen.com>
+
+	* master/ioctl.c, master/ioctl.h, tool/CommandConfig.cpp:
+	Show complete access flag in config view.
+	[4151f6f4c3e1] <stable-1.5>
+
+2012-10-04  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, lib/sdo_request.c, master/fsm_pdo.c,
+	master/fsm_pdo_entry.c, master/ioctl.c, master/ioctl.h,
+	master/master.c, master/sdo_request.c, master/sdo_request.h,
+	master/slave_config.c:
+	Added ecrt_sdo_request_index() method to change index and subindex.
+	[fa52128477f6] <stable-1.5>
+
+2012-09-20  Florian Pose  <fp@igh-essen.com>
+
+	* .hgignore, FEATURES, configure.ac, examples/Kbuild.in,
+	examples/Makefile.am, examples/rtai_rtdm/Makefile.am,
+	examples/rtai_rtdm/main.c, examples/xenomai/Makefile.am,
+	examples/xenomai/main.c, examples/xenomai_posix/Makefile.am,
+	examples/xenomai_posix/main.c, include/ecrt.h, lib/Makefile.am,
+	lib/common.c, lib/domain.c, lib/ioctl.h, lib/master.c,
+	lib/sdo_request.c, lib/slave_config.c, lib/voe_handler.c,
+	master/Kbuild.in, master/Makefile.am, master/cdev.c, master/ioctl.c,
+	master/ioctl.h, master/master.c, master/master.h, master/rtdm-
+	ioctl.c, master/rtdm.c, master/rtdm.h:
+	Re-worked and seamlessly integrated RTDM interface.
+	[3bdd7a747fae] <stable-1.5>
+
+	* lib/voe_handler.c:
+	Do not re-allocate memory in VoE handler.
+	[f4313f5aba88] <stable-1.5>
+
+	* lib/sdo_request.c:
+	Do not re-alloc memory in library implementation of
+	ecrt_sdo_request_state().
+	[eee9ed9901f7] <stable-1.5>
+
+2012-09-19  Florian Pose  <fp@igh-essen.com>
+
+	* lib/voe_handler.c:
+	Minor change.
+	[1430a47a67dd] <stable-1.5>
+
+	* lib/voe_handler.c:
+	Minor: Line breaking.
+	[cc2e1cbb63b1] <stable-1.5>
+
+	* lib/sdo_request.c, lib/slave_config.c:
+	Again fixed some compiler warnings.
+	[8a270ea612ee] <stable-1.5>
+
+	* lib/master.c:
+	Fixed some compiler warnings.
+	[17ada1c77acc] <stable-1.5>
+
+	* lib/master.c:
+	Minor: Fixed max line length.
+	[58572b4208ba] <stable-1.5>
+
+	* examples/dc_user/Makefile.am, examples/user/Makefile.am,
+	examples/user/main.c, lib/Makefile.am:
+	Avoided use of AM_CFLAGS, which is not used in some situations;
+	fixed warning.
+	[6a6dec6fc806] <stable-1.5>
+
+2012-09-11  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h:
+	Minor change.
+	[39a1b82b5535] <stable-1.5>
+
+	* include/ecrt.h:
+	Minor change.
+	[f2d1bb2ea424] <stable-1.5>
+
+	* Makefile.am:
+	Minor: removed spaces from Makefile.
+	[1fea21005c4b] <stable-1.5>
+
+2012-09-06  Florian Pose  <fp@igh-essen.com>
+
+	* Doxyfile.in, FEATURES, Kbuild.in, Makefile.am, bootstrap,
+	devices/8139too-2.6.18-ethercat.c,
+	devices/8139too-2.6.19-ethercat.c,
+	devices/8139too-2.6.22-ethercat.c,
+	devices/8139too-2.6.24-ethercat.c,
+	devices/8139too-2.6.26-ethercat.c,
+	devices/8139too-2.6.27-ethercat.c,
+	devices/8139too-2.6.28-ethercat.c,
+	devices/8139too-2.6.29-ethercat.c,
+	devices/8139too-2.6.31-ethercat.c,
+	devices/8139too-2.6.32-ethercat.c,
+	devices/8139too-2.6.34-ethercat.c,
+	devices/8139too-2.6.35-ethercat.c, devices/Kbuild.in,
+	devices/e100-2.6.24-ethercat.c, devices/e100-2.6.29-ethercat.c,
+	devices/e100-2.6.31-ethercat.c, devices/e100-2.6.32-ethercat.c,
+	devices/e100-2.6.33-ethercat.c, devices/e100-2.6.35-ethercat.c,
+	devices/e100-2.6.37-ethercat.c, devices/e1000/Kbuild.in,
+	devices/e1000/e1000_main-2.6.18-ethercat.c,
+	devices/e1000/e1000_main-2.6.20-ethercat.c,
+	devices/e1000/e1000_main-2.6.22-ethercat.c,
+	devices/e1000/e1000_main-2.6.24-ethercat.c,
+	devices/e1000/e1000_main-2.6.26-ethercat.c,
+	devices/e1000/e1000_main-2.6.27-ethercat.c,
+	devices/e1000/e1000_main-2.6.28-ethercat.c,
+	devices/e1000/e1000_main-2.6.29-ethercat.c,
+	devices/e1000/e1000_main-2.6.31-ethercat.c,
+	devices/e1000/e1000_main-2.6.32-ethercat.c,
+	devices/e1000/e1000_main-2.6.33-ethercat.c,
+	devices/e1000/e1000_main-2.6.35-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-ethercat.c,
+	devices/e1000e/Kbuild.in, devices/e1000e/netdev-2.6.32-ethercat.c,
+	devices/e1000e/netdev-2.6.33-ethercat.c,
+	devices/e1000e/netdev-2.6.34-ethercat.c,
+	devices/e1000e/netdev-2.6.35-ethercat.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-3.2-ethercat.c,
+	devices/r8169-2.6.31-ethercat.c, devices/r8169-2.6.32-ethercat.c,
+	devices/r8169-2.6.33-ethercat.c, devices/r8169-2.6.36-ethercat.c,
+	documentation/ethercat_doc.tex, documentation/graphs/fsm_master.dot,
+	ethercat.spec.in, examples/Kbuild.in, examples/Makefile.am,
+	examples/dc_rtai/Kbuild.in, examples/dc_rtai/Makefile.am,
+	examples/dc_rtai/dc_rtai_sample.c, examples/dc_user/Makefile.am,
+	examples/dc_user/main.c, examples/mini/Kbuild.in,
+	examples/mini/Makefile.am, examples/mini/mini.c,
+	examples/rtai/Kbuild.in, examples/rtai/Makefile.am,
+	examples/rtai/rtai_sample.c, examples/tty/Kbuild.in,
+	examples/tty/Makefile.am, examples/tty/serial.c, examples/tty/tty.c,
+	examples/user/Makefile.am, examples/user/main.c,
+	include/Makefile.am, include/ectty.h, lib/Makefile.am, lib/domain.c,
+	lib/domain.h, lib/master.h, lib/sdo_request.c, lib/sdo_request.h,
+	lib/slave_config.c, lib/slave_config.h, lib/voe_handler.c,
+	lib/voe_handler.h, m4/Makefile.am, master/Kbuild.in,
+	master/Makefile.am, master/cdev.c, master/datagram.c,
+	master/device.c, master/ethernet.c, master/fsm_pdo.c,
+	master/fsm_pdo_entry.c, master/ioctl.h, master/master.c,
+	master/master.h, master/pdo.c, master/pdo_entry.c,
+	master/pdo_list.c, master/sdo.c, master/slave.c, master/slave.h,
+	master/slave_config.c, script/ifup-eoe.sh,
+	script/init.d/Makefile.am, script/init.d/ethercat.in,
+	script/sysconfig/Makefile.am, script/sysconfig/ethercat,
+	tool/Command.cpp, tool/CommandAlias.cpp, tool/CommandCStruct.cpp,
+	tool/CommandConfig.cpp, tool/CommandData.cpp, tool/CommandDebug.cpp,
+	tool/CommandEoe.cpp, tool/CommandGraph.cpp, tool/CommandMaster.cpp,
+	tool/CommandPdos.cpp, tool/CommandRegRead.cpp,
+	tool/CommandRegWrite.cpp, tool/CommandRescan.cpp,
+	tool/CommandSdos.cpp, tool/CommandSiiRead.cpp,
+	tool/CommandSiiWrite.cpp, tool/CommandSlaves.cpp,
+	tool/CommandSlaves.h, tool/CommandStates.cpp, tool/CommandXml.cpp,
+	tool/DataTypeHandler.cpp, tool/Makefile.am, tool/MasterDevice.cpp,
+	tool/MasterDevice.h, tty/Kbuild.in, tty/Makefile.am, tty/module.c:
+	Removed trailing spaces.
+	[bc2d4bf9cbe5] <stable-1.5>
+
+	* .hgignore:
+	Ignore .deps/*.Po
+	[69056c46aa4d] <stable-1.5>
+
+	* NEWS, configure.ac, devices/Makefile.am,
+	devices/e100-2.6.32-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.29-orig.c,
+	devices/e1000/e1000_main-2.6.29-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/e1000-2.6.34-ethercat.h,
+	documentation/ethercat_doc.tex, include/ecrt.h, lib/master.c,
+	master/cdev.c, master/ethernet.c, master/fsm_master.c,
+	master/fsm_slave.c, master/globals.h, master/master.c,
+	master/master.h, master/module.c, master/slave_config.c,
+	script/sysconfig/ethercat:
+	Merged redundancy branch to stable-1.5.
+	[fdb85a806585] <stable-1.5>
+
+	* examples/Kbuild.in, examples/dc_rtai/Kbuild.in:
+	Fixed all mangled hg keywords.
+	[63bef67e812b] <stable-1.5>
+
+	* devices/e100-2.6.32-ethercat.c:
+	Fixed malformed keywords.
+	[375dba75a24b] <stable-1.5>
+
+2012-09-04  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/8139too-2.6.36-ethercat.c, devices/Makefile.am,
+	devices/e1000e/Makefile.am, master/slave_config.c:
+	Malformed hg keywords.
+	[00efa1dd75f9] <stable-1.5>
+
+2012-08-06  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_change.c:
+	Fixed AL status code lookup.
+	[b31f1d261ab8] <stable-1.5>
+
+2012-07-23  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000e/82571-3.2-ethercat.c,
+	devices/e1000e/82571-3.2-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/defines-3.2-ethercat.h,
+	devices/e1000e/defines-3.2-orig.h,
+	devices/e1000e/e1000-3.2-ethercat.h,
+	devices/e1000e/e1000-3.2-orig.h,
+	devices/e1000e/es2lan-3.2-ethercat.c,
+	devices/e1000e/es2lan-3.2-orig.c,
+	devices/e1000e/ethtool-3.2-ethercat.c,
+	devices/e1000e/ethtool-3.2-orig.c, devices/e1000e/hw-3.2-ethercat.h,
+	devices/e1000e/hw-3.2-orig.h, devices/e1000e/ich8lan-3.2-ethercat.c,
+	devices/e1000e/ich8lan-3.2-orig.c,
+	devices/e1000e/lib-3.2-ethercat.c, devices/e1000e/lib-3.2-orig.c,
+	devices/e1000e/netdev-3.2-ethercat.c,
+	devices/e1000e/netdev-3.2-orig.c,
+	devices/e1000e/param-3.2-ethercat.c,
+	devices/e1000e/param-3.2-orig.c, devices/e1000e/phy-3.2-ethercat.c,
+	devices/e1000e/phy-3.2-orig.c:
+	Added e1000e driver for kernel 3.2, thanks to J. Kunz.
+	[35223d2e6e72] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/r8169-3.2-ethercat.c,
+	devices/r8169-3.2-orig.c:
+	Added r8169 driver for kernel 3.2 (thanks to J. Kunz).
+	[214be3e0640e] <stable-1.5>
+
+	* master/slave_config.c:
+	Added missing linux/modules.h include.
+	[2698d29007f1] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/r8169-2.6.36-ethercat.c,
+	devices/r8169-2.6.36-orig.c:
+	Added r8169 driver for 2.6.36, thanks to J. Kunz.
+	[7f7580b318c3] <stable-1.5>
+
+	* devices/8139too-2.6.36-ethercat.c:
+	Fixed 8139too driver for 2.6.36.
+	[5726bd931ecb] <stable-1.5>
+
+	* devices/e1000e/ethtool-2.6.33-ethercat.c:
+	Applied ethtool patch from Jun Yuan.
+	[8b9be05873c1] <stable-1.5>
+
+2012-07-13  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000/Makefile.am, devices/e1000/e1000-3.0-ethercat.h,
+	devices/e1000/e1000-3.0-orig.h,
+	devices/e1000/e1000_ethtool-3.0-ethercat.c,
+	devices/e1000/e1000_ethtool-3.0-orig.c,
+	devices/e1000/e1000_hw-3.0-ethercat.c,
+	devices/e1000/e1000_hw-3.0-ethercat.h,
+	devices/e1000/e1000_hw-3.0-orig.c,
+	devices/e1000/e1000_hw-3.0-orig.h,
+	devices/e1000/e1000_main-3.0-ethercat.c,
+	devices/e1000/e1000_main-3.0-orig.c,
+	devices/e1000/e1000_osdep-3.0-ethercat.h,
+	devices/e1000/e1000_osdep-3.0-orig.h,
+	devices/e1000/e1000_param-3.0-ethercat.c,
+	devices/e1000/e1000_param-3.0-orig.c:
+	Added e1000 driver for kernel 3.0.
+	[6742f8751872] <stable-1.5>
+
+	* COPYING.LESSER:
+	Fixed COPYING.LESSER to be LGPL 2.1 (like in file headers).
+	[56a3d42f1ae6] <stable-1.5>
+
+	* configure.ac, examples/tty/serial.c, tty/module.c:
+	Removed whitespace.
+	[b068951506d9] <stable-1.5>
+
+2012-07-09  Florian Pose  <fp@igh-essen.com>
+
+	* lib/common.c:
+	Removed whitespace.
+	[572948e8b2ed] <stable-1.5>
+
+	* master/module.c:
+	Removed whitespace.
+	[2565cb4d9e31] <stable-1.5>
+
+2012-04-10  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, configure.ac, devices/Makefile.am,
+	devices/e1000/e1000_ethtool-2.6.29-org.c,
+	devices/e1000/e1000_main-2.6.29-org.c:
+	merge.
+	[ca345abf0565] <stable-1.5>
+
+	* script/ethercat.service.in:
+	Install ethercat service to multi-user target by default.
+	[aa0f6f939cb3] <stable-1.5>
+
+	* NEWS, configure.ac, devices/Makefile.am,
+	devices/e100-3.0-ethercat.c, devices/e100-3.0-orig.c:
+	Added e100 driver for kernel 3.0.
+	[97ec7e18412e] <stable-1.5>
+
+	* tool/DataTypeHandler.cpp:
+	Fixed 'String too large' error in command-line tool.
+	[ac3db27d60e0] <stable-1.5>
+
+2012-01-30  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS:
+	NEWS.
+	[0f7a243b03e4] <stable-1.5>
+
+	* master/master.c, master/slave.c:
+	Added fix for ESC port order (DC delay calculation).
+	[1f44094e2004] <stable-1.5>
+
+	* NEWS, devices/e1000e/82571-2.6.35-ethercat.c,
+	devices/e1000e/82571-2.6.35-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/defines-2.6.35-ethercat.h,
+	devices/e1000e/defines-2.6.35-orig.h,
+	devices/e1000e/e1000-2.6.35-ethercat.h,
+	devices/e1000e/e1000-2.6.35-orig.h,
+	devices/e1000e/es2lan-2.6.35-ethercat.c,
+	devices/e1000e/es2lan-2.6.35-orig.c,
+	devices/e1000e/ethtool-2.6.35-ethercat.c,
+	devices/e1000e/ethtool-2.6.35-orig.c,
+	devices/e1000e/hw-2.6.35-ethercat.h,
+	devices/e1000e/hw-2.6.35-orig.h,
+	devices/e1000e/ich8lan-2.6.35-ethercat.c,
+	devices/e1000e/ich8lan-2.6.35-orig.c,
+	devices/e1000e/lib-2.6.35-ethercat.c,
+	devices/e1000e/lib-2.6.35-orig.c,
+	devices/e1000e/netdev-2.6.35-ethercat.c,
+	devices/e1000e/netdev-2.6.35-orig.c,
+	devices/e1000e/param-2.6.35-ethercat.c,
+	devices/e1000e/param-2.6.35-orig.c,
+	devices/e1000e/phy-2.6.35-ethercat.c,
+	devices/e1000e/phy-2.6.35-orig.c:
+	Added e1000e driver for 2.6.35.
+	[0a6fc3f5f418] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.37-ethercat.c:
+	Minor: Indentation and braces.
+	[1c75f52e5c0f] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.35-ethercat.c:
+	Minor: Indentation.
+	[af008c10823b] <stable-1.5>
+
+	* NEWS, devices/e1000/Makefile.am,
+	devices/e1000/e1000-2.6.35-ethercat.h,
+	devices/e1000/e1000-2.6.35-orig.h,
+	devices/e1000/e1000_ethtool-2.6.35-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.35-orig.c,
+	devices/e1000/e1000_hw-2.6.35-ethercat.c,
+	devices/e1000/e1000_hw-2.6.35-ethercat.h,
+	devices/e1000/e1000_hw-2.6.35-orig.c,
+	devices/e1000/e1000_hw-2.6.35-orig.h,
+	devices/e1000/e1000_main-2.6.35-ethercat.c,
+	devices/e1000/e1000_main-2.6.35-orig.c,
+	devices/e1000/e1000_osdep-2.6.35-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.35-orig.h,
+	devices/e1000/e1000_param-2.6.35-ethercat.c,
+	devices/e1000/e1000_param-2.6.35-orig.c:
+	Added e1000 driver for 2.6.35.
+	[fda70486f179] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/e100-2.6.35-ethercat.c,
+	devices/e100-2.6.35-orig.c:
+	Added e100 driver for 2.6.35.
+	[03be7b751d08] <stable-1.5>
+
+2012-01-25  Florian Pose  <fp@igh-essen.com>
+
+	* devices/r8169-2.6.35-ethercat.c:
+	Fixed opening device.
+	[0d8a043a6adb] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/r8169-2.6.35-ethercat.c,
+	devices/r8169-2.6.35-orig.c:
+	Added r8169 driver for 2.6.35.
+	[416575d0ab37] <stable-1.5>
+
+2012-01-24  Florian Pose  <fp@igh-essen.com>
+
+	* configure.ac:
+	Version 1.5.1.
+	[ffb3c5a4f7be] <stable-1.5>
+
+	* devices/e1000/Makefile.am:
+	Added missing dist for e1000 driver for 2.6.31.
+	[83ab907d2b6e] <stable-1.5>
+
+	* devices/Makefile.am:
+	Fixed missing dist for r8169 for 2.6.32.
+	[d274f5b4d4e1] <stable-1.5>
+
+2012-01-13  Florian Pose  <fp@igh-essen.com>
+
+	* master/master.c:
+	Fixed reset of allow_scanning flag if ecrt_master_activate() was not
+	called.
+	[ec8e1151b8a7] <stable-1.5>
+
+2012-01-10  Florian Pose  <fp@igh-essen.com>
+
+	* configure.ac:
+	Version 1.5.0.
+	[b13e4dee72b8] <stable-1.5>
+
+	* script/Makefile.am:
+	Add ethercat.conf to distribution.
+	[543ba57580af] <stable-1.5>
+
+	* devices/e1000/e1000_ethtool-2.6.29-org.c,
+	devices/e1000/e1000_ethtool-2.6.29-orig.c,
+	devices/e1000/e1000_main-2.6.29-org.c,
+	devices/e1000/e1000_main-2.6.29-orig.c:
+	Renamed original parts of e1000 driver for 2.6.29.
+	[b18db181066c] <stable-1.5>
+
+	* master/cdev.c:
+	Allocated ioctl data structures dynamically to avoid stack warnings.
+	[79269cfe25a7] <stable-1.5>
+
+	* master/fsm_foe.c:
+	Decreased maximum length of error message to avoid stack warning.
+	[a2a675601c98] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.27-ethercat.c,
+	devices/e1000/e1000_main-2.6.27-orig.c:
+	Added changes in e1000 driver for 2.6.27.
+	[6001f50617a7] <stable-1.5>
+
+	* devices/r8169-2.6.24-ethercat.c, devices/r8169-2.6.28-ethercat.c,
+	devices/r8169-2.6.37-ethercat.c:
+	Fixed suspend/resume for r8169 drivers.
+	[5023ce75fe91] <stable-1.5>
+
+	* master/ethernet.h:
+	Fixed semaphore header for kernels < 2.6.27.
+	[db932582b674] <stable-1.5>
+
+	* master/master.c:
+	Copy missing slave_info data in kernel space.
+	[fc891656a9fe] <stable-1.5>
+
+	* include/ecrt.h:
+	Added slave_info documentation.
+	[5854e4712823] <stable-1.5>
+
+2010-04-30  Stefan Weiser  <ch1010858@ch10pc584>
+
+	* lib/master.c:
+	Fixed copying port information.
+	[d23f69156cfd] <stable-1.5>
+
+	* include/ecrt.h, lib/master.c, master/globals.h:
+	Insert port information into slave info.
+	[0ba77ef52922] <stable-1.5>
+
+2012-01-09  Florian Pose  <fp@igh-essen.com>
+
+	* master/ethernet.c, master/fsm_foe.c, master/master.c:
+	Avoided unused variable warnings.
+	[cd49c2c31dcb] <stable-1.5>
+
+	* devices/e1000e/82571-2.6.37-ethercat.c,
+	devices/e1000e/es2lan-2.6.37-ethercat.c,
+	devices/e1000e/ich8lan-2.6.37-ethercat.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c:
+	Avoided unused variable warnings.
+	[18f9c69d9590] <stable-1.5>
+
+	* devices/e1000/e1000_hw-2.6.37-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-ethercat.c:
+	Avoided unused variable warnings.
+	[33accbe40987] <stable-1.5>
+
+	* devices/e100-2.6.37-ethercat.c:
+	Avoided unused variable warnings.
+	[6c5ca9444533] <stable-1.5>
+
+	* devices/8139too-2.6.37-ethercat.c:
+	Avoided unused variable warnings.
+	[07a6c9cffb78] <stable-1.5>
+
+	* TODO:
+	TODO.
+	[b368897f7995] <stable-1.5>
+
+	* configure.ac, documentation/ethercat_doc.tex, script/ethercat.conf,
+	script/sysconfig/ethercat:
+	Enable generic driver by default.
+	[71ebc81c6e43] <stable-1.5>
+
+2012-01-04  Florian Pose  <fp@igh-essen.com>
+
+	* devices/r8169-2.6.33-ethercat.c:
+	Minor changes.
+	[a2a2f1a0d07b] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/r8169-2.6.37-ethercat.c,
+	devices/r8169-2.6.37-orig.c:
+	Added r8169 driver for 2.6.37.
+	[4f6670f083f1] <stable-1.5>
+
+	* NEWS, devices/Makefile.am, devices/e100-2.6.37-ethercat.c,
+	devices/e100-2.6.37-orig.c:
+	Added e100 driver for 2.6.37.
+	[e08444abe130] <stable-1.5>
+
+	* devices/e100-2.6.33-ethercat.c:
+	Fixed crash on loading e100 driver for 2.6.33 (allocating cbs_pool).
+	[28e99697f6e6] <stable-1.5>
+
+2011-07-25  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e1000e/e1000-2.6.34-ethercat.h:
+	Minor.
+	[194bbfa734eb] <stable-1.5>
+
+2011-11-04  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e1000e/e1000-2.6.34-ethercat.h:
+	Fixed typo.
+	[b72642577a0a] <stable-1.5>
+
+2011-07-25  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000e/82571-2.6.37-ethercat.c,
+	devices/e1000e/82571-2.6.37-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/defines-2.6.37-ethercat.h,
+	devices/e1000e/defines-2.6.37-orig.h,
+	devices/e1000e/e1000-2.6.37-ethercat.h,
+	devices/e1000e/e1000-2.6.37-orig.h,
+	devices/e1000e/es2lan-2.6.37-ethercat.c,
+	devices/e1000e/es2lan-2.6.37-orig.c,
+	devices/e1000e/ethtool-2.6.37-ethercat.c,
+	devices/e1000e/ethtool-2.6.37-orig.c,
+	devices/e1000e/hw-2.6.37-ethercat.h,
+	devices/e1000e/hw-2.6.37-orig.h,
+	devices/e1000e/ich8lan-2.6.37-ethercat.c,
+	devices/e1000e/ich8lan-2.6.37-orig.c,
+	devices/e1000e/lib-2.6.37-ethercat.c,
+	devices/e1000e/lib-2.6.37-orig.c,
+	devices/e1000e/netdev-2.6.37-ethercat.c,
+	devices/e1000e/netdev-2.6.37-orig.c,
+	devices/e1000e/param-2.6.37-ethercat.c,
+	devices/e1000e/param-2.6.37-orig.c,
+	devices/e1000e/phy-2.6.37-ethercat.c,
+	devices/e1000e/phy-2.6.37-orig.c:
+	Added e1000e driver for 2.6.37.
+	[d52848f0be04] <stable-1.5>
+
+2011-12-15  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000e/82571-2.6.33-ethercat.c,
+	devices/e1000e/82571-2.6.33-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/defines-2.6.33-ethercat.h,
+	devices/e1000e/defines-2.6.33-orig.h,
+	devices/e1000e/e1000-2.6.33-ethercat.h,
+	devices/e1000e/e1000-2.6.33-orig.h,
+	devices/e1000e/es2lan-2.6.33-ethercat.c,
+	devices/e1000e/es2lan-2.6.33-orig.c,
+	devices/e1000e/ethtool-2.6.33-ethercat.c,
+	devices/e1000e/ethtool-2.6.33-orig.c,
+	devices/e1000e/hw-2.6.33-ethercat.h,
+	devices/e1000e/hw-2.6.33-orig.h,
+	devices/e1000e/ich8lan-2.6.33-ethercat.c,
+	devices/e1000e/ich8lan-2.6.33-orig.c,
+	devices/e1000e/lib-2.6.33-ethercat.c,
+	devices/e1000e/lib-2.6.33-orig.c,
+	devices/e1000e/netdev-2.6.33-ethercat.c,
+	devices/e1000e/netdev-2.6.33-orig.c,
+	devices/e1000e/param-2.6.33-ethercat.c,
+	devices/e1000e/param-2.6.33-orig.c,
+	devices/e1000e/phy-2.6.33-ethercat.c,
+	devices/e1000e/phy-2.6.33-orig.c:
+	Added e1000e driver for 2.6.33.
+	[2eb46694f484] <stable-1.5>
+
+2011-10-28  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000e/82571-2.6.32-ethercat.c,
+	devices/e1000e/82571-2.6.32-orig.c, devices/e1000e/Makefile.am,
+	devices/e1000e/defines-2.6.32-ethercat.h,
+	devices/e1000e/defines-2.6.32-orig.h,
+	devices/e1000e/e1000-2.6.32-ethercat.h,
+	devices/e1000e/e1000-2.6.32-orig.h,
+	devices/e1000e/es2lan-2.6.32-ethercat.c,
+	devices/e1000e/es2lan-2.6.32-orig.c,
+	devices/e1000e/ethtool-2.6.32-ethercat.c,
+	devices/e1000e/ethtool-2.6.32-orig.c,
+	devices/e1000e/hw-2.6.32-ethercat.h,
+	devices/e1000e/hw-2.6.32-orig.h,
+	devices/e1000e/ich8lan-2.6.32-ethercat.c,
+	devices/e1000e/ich8lan-2.6.32-orig.c,
+	devices/e1000e/lib-2.6.32-ethercat.c,
+	devices/e1000e/lib-2.6.32-orig.c,
+	devices/e1000e/netdev-2.6.32-ethercat.c,
+	devices/e1000e/netdev-2.6.32-orig.c,
+	devices/e1000e/param-2.6.32-ethercat.c,
+	devices/e1000e/param-2.6.32-orig.c,
+	devices/e1000e/phy-2.6.32-ethercat.c,
+	devices/e1000e/phy-2.6.32-orig.c:
+	Added e1000e driver for 2.6.32.
+	[6787ee69205e] <stable-1.5>
+
+2011-07-06  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, configure.ac, devices/Kbuild.in, devices/Makefile.am,
+	devices/e1000e/82571-2.6.34-ethercat.c,
+	devices/e1000e/82571-2.6.34-orig.c, devices/e1000e/Kbuild.in,
+	devices/e1000e/Makefile.am,
+	devices/e1000e/defines-2.6.34-ethercat.h,
+	devices/e1000e/defines-2.6.34-orig.h,
+	devices/e1000e/e1000-2.6.34-ethercat.h,
+	devices/e1000e/e1000-2.6.34-orig.h,
+	devices/e1000e/es2lan-2.6.34-ethercat.c,
+	devices/e1000e/es2lan-2.6.34-orig.c,
+	devices/e1000e/ethtool-2.6.34-ethercat.c,
+	devices/e1000e/ethtool-2.6.34-orig.c,
+	devices/e1000e/hw-2.6.34-ethercat.h,
+	devices/e1000e/hw-2.6.34-orig.h,
+	devices/e1000e/ich8lan-2.6.34-ethercat.c,
+	devices/e1000e/ich8lan-2.6.34-orig.c,
+	devices/e1000e/lib-2.6.34-ethercat.c,
+	devices/e1000e/lib-2.6.34-orig.c,
+	devices/e1000e/netdev-2.6.34-ethercat.c,
+	devices/e1000e/netdev-2.6.34-orig.c,
+	devices/e1000e/param-2.6.34-ethercat.c,
+	devices/e1000e/param-2.6.34-orig.c,
+	devices/e1000e/phy-2.6.34-ethercat.c,
+	devices/e1000e/phy-2.6.34-orig.c, documentation/ethercat_doc.tex,
+	script/sysconfig/ethercat:
+	Added e1000e driver for 2.6.34. Thanks to Siwei Zhuang.
+	[37c77787ea29] <stable-1.5>
+
+2012-01-09  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/8139too-2.6.35-ethercat.c,
+	devices/8139too-2.6.35-orig.c, devices/Makefile.am:
+	Added 8139too driver for 2.6.35.
+	[1b881194a4d8] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.32-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-ethercat.c:
+	Avoided enabling timer.
+	[f55fe046b22b] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.31-ethercat.c:
+	Fixed ISR.
+	[8fd38efc562f] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.33-ethercat.c:
+	Fixed e1000 link detection race.
+	[e11f5df971e3] <stable-1.5>
+
+	* devices/e1000/e1000_main-2.6.33-ethercat.c:
+	Minor spacing changes.
+	[1abb01002cc5] <stable-1.5>
+
+2011-11-23  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e1000/e1000_main-2.6.31-ethercat.c,
+	devices/e1000/e1000_main-2.6.33-ethercat.c:
+	Fixed accidentially used operator & by using &&.
+	[0e85057a70fb] <stable-1.5>
+
+2011-12-15  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/e1000/Makefile.am,
+	devices/e1000/e1000-2.6.37-ethercat.h,
+	devices/e1000/e1000-2.6.37-orig.h,
+	devices/e1000/e1000_ethtool-2.6.37-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.37-orig.c,
+	devices/e1000/e1000_hw-2.6.37-ethercat.c,
+	devices/e1000/e1000_hw-2.6.37-ethercat.h,
+	devices/e1000/e1000_hw-2.6.37-orig.c,
+	devices/e1000/e1000_hw-2.6.37-orig.h,
+	devices/e1000/e1000_main-2.6.37-ethercat.c,
+	devices/e1000/e1000_main-2.6.37-orig.c,
+	devices/e1000/e1000_osdep-2.6.37-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.37-orig.h,
+	devices/e1000/e1000_param-2.6.37-ethercat.c,
+	devices/e1000/e1000_param-2.6.37-orig.c:
+	Added e1000 driver for 2.6.37.
+	[14728d0c4a66] <stable-1.5>
+
+2011-03-03  Andreas Stewering-Bone  <ab@igh-essen.com>
+
+	* NEWS, devices/8139too-2.6.33-ethercat.c,
+	devices/8139too-2.6.33-orig.c, devices/Makefile.am,
+	devices/e100-2.6.33-ethercat.c, devices/e100-2.6.33-orig.c,
+	devices/e1000/Makefile.am, devices/e1000/e1000-2.6.33-ethercat.h,
+	devices/e1000/e1000-2.6.33-orig.h,
+	devices/e1000/e1000_ethtool-2.6.33-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.33-orig.c,
+	devices/e1000/e1000_hw-2.6.33-ethercat.c,
+	devices/e1000/e1000_hw-2.6.33-ethercat.h,
+	devices/e1000/e1000_hw-2.6.33-orig.c,
+	devices/e1000/e1000_hw-2.6.33-orig.h,
+	devices/e1000/e1000_main-2.6.33-ethercat.c,
+	devices/e1000/e1000_main-2.6.33-orig.c,
+	devices/e1000/e1000_osdep-2.6.33-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.33-orig.h,
+	devices/e1000/e1000_param-2.6.33-ethercat.c,
+	devices/e1000/e1000_param-2.6.33-orig.c,
+	devices/r8169-2.6.33-ethercat.c, devices/r8169-2.6.33-orig.c:
+	Add drivers for kernel 2.6.33 Thanks to Dipl.-Inform. Jürgen Kunz
+	Technische Universität Darmstadt for e100, e1000, r8169 driver
+	[7aeb32a5bb6d] <stable-1.5>
+
+2011-12-15  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e1000/e1000-2.6.29-ethercat.h,
+	devices/e1000/e1000-2.6.29-orig.h,
+	devices/e1000/e1000_ethtool-2.6.29-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.29-org.c,
+	devices/e1000/e1000_hw-2.6.29-ethercat.c,
+	devices/e1000/e1000_hw-2.6.29-ethercat.h,
+	devices/e1000/e1000_hw-2.6.29-orig.c,
+	devices/e1000/e1000_hw-2.6.29-orig.h,
+	devices/e1000/e1000_main-2.6.29-ethercat.c,
+	devices/e1000/e1000_main-2.6.29-org.c,
+	devices/e1000/e1000_osdep-2.6.29-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.29-orig.h,
+	devices/e1000/e1000_param-2.6.29-ethercat.c,
+	devices/e1000/e1000_param-2.6.29-orig.c:
+	Removed executable permissions.
+	[9f7856d9462f] <stable-1.5>
+
+	* NEWS, devices/e1000/Makefile.am,
+	devices/e1000/e1000-2.6.32-ethercat.h,
+	devices/e1000/e1000-2.6.32-orig.h,
+	devices/e1000/e1000_ethtool-2.6.32-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.32-orig.c,
+	devices/e1000/e1000_hw-2.6.32-ethercat.c,
+	devices/e1000/e1000_hw-2.6.32-ethercat.h,
+	devices/e1000/e1000_hw-2.6.32-orig.c,
+	devices/e1000/e1000_hw-2.6.32-orig.h,
+	devices/e1000/e1000_main-2.6.32-ethercat.c,
+	devices/e1000/e1000_main-2.6.32-orig.c,
+	devices/e1000/e1000_osdep-2.6.32-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.32-orig.h,
+	devices/e1000/e1000_param-2.6.32-ethercat.c,
+	devices/e1000/e1000_param-2.6.32-orig.c:
+	Added e1000 driver for 2.6.32.
+	[15babd8d4205] <stable-1.5>
+
+2010-11-04  Christoph Mathys  <ch1010832@ch10pc602>
+
+	* devices/e1000/e1000-2.6.31-ethercat.h,
+	devices/e1000/e1000-2.6.31-orig.h,
+	devices/e1000/e1000_ethtool-2.6.31-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.31-orig.c,
+	devices/e1000/e1000_hw-2.6.31-ethercat.c,
+	devices/e1000/e1000_hw-2.6.31-ethercat.h,
+	devices/e1000/e1000_hw-2.6.31-orig.c,
+	devices/e1000/e1000_hw-2.6.31-orig.h,
+	devices/e1000/e1000_main-2.6.31-ethercat.c,
+	devices/e1000/e1000_main-2.6.31-orig.c,
+	devices/e1000/e1000_osdep-2.6.31-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.31-orig.h,
+	devices/e1000/e1000_param-2.6.31-ethercat.c,
+	devices/e1000/e1000_param-2.6.31-orig.c:
+	Added e1000 port for 2.6.31
+	[190791fd47d2] <stable-1.5>
+
+2012-01-05  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_coe.c:
+	Allow gaps between SDO subindices when fetching dictionary.
+	[53b92e797e64] <stable-1.5>
+
+	* master/fsm_coe.c:
+	Allow CoE OD List Segments to have 6 bytes instead of 8.
+	[6b481c7b3b34] <stable-1.5>
+
+2012-01-04  Florian Pose  <fp@igh-essen.com>
+
+	* script/ethercatctl.in:
+	Fixed appending to LOADED_MODULES variable.
+	[334f4530c1df] <stable-1.5>
+
+	* .hgignore, NEWS, configure.ac, script/Makefile.am,
+	script/ethercat.conf, script/ethercat.service.in,
+	script/ethercatctl.in:
+	Added first systemd support.
+	[1c7c546ac08c] <stable-1.5>
+
+	* tool/DataTypeHandler.cpp:
+	Fixed possible null pointer dereference in ethercat tool.
+	[54cda823743a] <stable-1.5>
+
+	* TODO:
+	TODO.
+	[7248218cbcbb] <stable-1.5>
+
+2011-12-20  Florian Pose  <fp@igh-essen.com>
+
+	* master/cdev.c:
+	Removed some locks causing latency when using the library; added
+	ioctl() latency debugging; fixed FoE memory leaks in error case.
+	[912d70d6f0e5] <stable-1.5>
+
+2011-12-16  Florian Pose  <fp@igh-essen.com>
+
+	* merge
+	[6122e722133d] <stable-1.5>
+
+	* master/master.c:
+	Removed unnecessary call of ec_master_inject_external_datagrams().
+	[3afde1f58e1a] <stable-1.5>
+
+	* master/fsm_slave.c:
+	Minor: Fixed spacing.
+	[dff1cf71a8c7] <stable-1.5>
+
+	* master/fsm_change.c:
+	Read AL status code before acknowledging spontaneous state change.
+	[37a25c76987b] <stable-1.5>
+
+2011-12-14  Florian Pose  <fp@igh-essen.com>
+
+	* devices/generic.c:
+	Improved generic driver error messages.
+	[e69a5010914f] <stable-1.5>
+
+2011-12-09  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_master.c, master/master.c:
+	Improved resetting number of responding slaves.
+	[1a128e86d4f6] <stable-1.5>
+
+	* master/master.c:
+	Minor: Ordered master member initialisations.
+	[670cd8aa273d] <stable-1.5>
+
+	* master/master.h:
+	Minor.
+	[a19490c34184] <stable-1.5>
+
+2011-05-25  Andreas Stewering-Bone  <ab@igh-essen.com>
+
+	* devices/e1000/Makefile.am, devices/e1000/e1000-2.6.29-ethercat.h,
+	devices/e1000/e1000-2.6.29-orig.h,
+	devices/e1000/e1000_ethtool-2.6.29-ethercat.c,
+	devices/e1000/e1000_ethtool-2.6.29-org.c,
+	devices/e1000/e1000_hw-2.6.29-ethercat.c,
+	devices/e1000/e1000_hw-2.6.29-ethercat.h,
+	devices/e1000/e1000_hw-2.6.29-orig.c,
+	devices/e1000/e1000_hw-2.6.29-orig.h,
+	devices/e1000/e1000_main-2.6.29-ethercat.c,
+	devices/e1000/e1000_main-2.6.29-org.c,
+	devices/e1000/e1000_osdep-2.6.29-ethercat.h,
+	devices/e1000/e1000_osdep-2.6.29-orig.h,
+	devices/e1000/e1000_param-2.6.29-ethercat.c,
+	devices/e1000/e1000_param-2.6.29-orig.c:
+	Add e1000 for 2.6.29 Thanks to Mr Benner (Company Moehwald, Germany)
+	[072c172e6a85] <stable-1.5>
+
+2011-10-28  Florian Pose  <fp@igh-essen.com>
+
+	* devices/8139too-2.6.32-ethercat.c:
+	Fixed compiler warning.
+	[11db674389b1] <stable-1.5>
+
+2011-11-09  Florian Pose  <fp@igh-essen.com>
+
+	* devices/e100-2.6.32-ethercat.c:
+	Fixed null pointer dereference on loading e100 driver for 2.6.32.
+	[5ba5b3792365] <stable-1.5>
+
+2011-11-04  Florian Pose  <fp@igh-essen.com>
+
+	* documentation/ethercat_doc.tex:
+	Updated configuration docs.
+	[64f03f19124b] <stable-1.5>
+
+	* documentation/graphs/Makefile:
+	Use ps2pdf for graph generation.
+	[e24a695792c7] <stable-1.5>
+
+	* NEWS, configure.ac, master/slave_config.c:
+	Added --enable-wildcards to use 0xffffffff as wildcard for vendor ID
+	and product code.
+	[d64957379916] <stable-1.5>
+
+2011-10-28  Florian Pose  <fp@igh-essen.com>
+
+	* CodingStyle.txt:
+	Again coding style.
+	[e645d0d83b3b] <stable-1.5>
+
+	* CodingStyle.txt, README:
+	Added coding style document.
+	[af3eda069078] <stable-1.5>
+
+2011-10-24  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, lib/master.c, master/cdev.c, master/ioctl.h,
+	master/master.c, tool/CommandDownload.cpp:
+	Added ecrt_master_sdo_download_complete() for ad-hoc downloading
+	SDOs (also via the command-line tool).
+	[c4afc5fede19] <stable-1.5>
+
+	* NEWS, master/fsm_slave_config.c, master/sync.c, master/sync.h:
+	Always enable a sync manager, if there are registered PDOs conatined
+	(and it is not virtual)
+	[4c335a1d4db0] <stable-1.5>
+
+2011-10-11  Florian Pose  <fp@igh-essen.com>
+
+	* tool/DataTypeHandler.cpp:
+	Minor: Added missing comma.
+	[23414e7559de] <stable-1.5>
+
+2011-09-22  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/Makefile.am, devices/e100-2.6.32-ethercat.c,
+	devices/e100-2.6.32-orig.c:
+	Added e100 driver for 2.6.32.
+	[d05df15dcc6c] <stable-1.5>
+
+	* master/fsm_master.c:
+	Fixed missing return causing slaves not going to OP.
+	[7dd86c484192] <stable-1.5>
+
+2011-09-19  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_master.c:
+	Fixed typo.
+	[79d44885021f] <stable-1.5>
+
+2011-09-16  Florian Pose  <fp@igh-essen.com>
+
+	* master/foe_request.h:
+	Removed unnecessary list header.
+	[f1ab48f2b9a6] <stable-1.5>
+
+	* master/fsm_master.c, master/master.c, master/master.h,
+	master/slave_config.c:
+	Removed allow_config flag and obsolete request to OP.
+	[2ec1239216e5] <stable-1.5>
+
+	* master/master.c:
+	Don not copy frame data to datagram memory, if datagram type is
+	write-only.
+	[b91bb9b96823] <stable-1.5>
+
+	* master/fsm_master.c:
+	Bugfix: Reset config_changed flag when aborting state check.
+	[d9d56e56f2a2] <stable-1.5>
+
+2011-09-15  Florian Pose  <fp@igh-essen.com>
+
+	* include/ecrt.h, master/cdev.c, master/master.c:
+	Implemented ecrt_master_sdo_upload() and ecrt_master_sdo_download()
+	also for kernel space.
+	[755e6ce823f0] <stable-1.5>
+
+	* master/fsm_master.c:
+	No app_time is only warning.
+	[6d3620f2328f] <stable-1.5>
+
+	* master/fsm_slave_config.c:
+	Output app_time in DC debugging.
+	[330e2d43d3b4] <stable-1.5>
+
+2011-08-09  Florian Pose  <fp@igh-essen.com>
+
+	* documentation/graphs/fsm_master.dot, master/fsm_master.c:
+	Improved DC sync at startup: Abort iterating though slaves and first
+	correct system time offsets, then begin configuring at slave 0.
+	[da4640f9776d] <stable-1.5>
+
+	* master/datagram.c, master/fsm_slave.c:
+	Minor: Fixed broken keyword strings.
+	[e485694c6427] <stable-1.5>
+
+	* documentation/graphs/fsm_master.dot:
+	Updated master fsm graph.
+	[5a55bc623d79] <stable-1.5>
+
+2011-07-21  Florian Pose  <fp@igh-essen.com>
+
+	* master/master.c:
+	Fixed bug in ec_master_queue_datagram() introduced in c9d32805d984.
+	[23ffec5c9c5b] <stable-1.5>
+
+2011-07-08  Florian Pose  <fp@igh-essen.com>
+
+	* master/fsm_slave.c:
+	Minor: removed unnecessary return.
+	[9cd87b98fac6] <stable-1.5>
+
+	* master/master.c:
+	Improved ecrt_master_queue_datagram(); detect skipped datagrams also
+	when already sent.
+	[775d1a02f204] <stable-1.5>
+
+	* master/datagram.c:
+	Fixed datagram statistics output (skipped datagrams).
+	[9c3fd68997d4] <stable-1.5>
+
+2011-05-16  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/8139too-2.6.32-ethercat.c,
+	devices/8139too-2.6.32-orig.c, devices/Makefile.am:
+	Added 8139too driver for 2.6.32.
+	[876b2482608e] <stable-1.5>
+
+2011-05-13  Florian Pose  <fp@igh-essen.com>
+
+	* devices/8139too-2.6.37-ethercat.c:
+	Fixed compiler error in 8139too-2.6.37-ethercat.c.
+	[9f5c5a3a0984] <stable-1.5>
+
+2011-05-12  Florian Pose  <fp@igh-essen.com>
+
+	* NEWS, devices/8139too-2.6.36-ethercat.c,
+	devices/8139too-2.6.36-orig.c, devices/8139too-2.6.37-ethercat.c,
+	devices/8139too-2.6.37-orig.c, devices/Makefile.am:
+	Added 8139too drivers for 2.6.36 and 2.6.37.
+	[0861a519c3b9] <stable-1.5>
+
+	* configure.ac:
+	Version 1.5-pre.
+	[2ab48cb3a5b4] <stable-1.5>
+
+	* Created stable-1.5 branch.
+	[06f3292f5b71] <stable-1.5>
+
