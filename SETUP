@@ -1,0 +1,21 @@
+./configure --enable-8139too=no
+make all modules
+sudo make modules_install install
+sudo depmod
+
+# systemd
+sudo ln -s /opt/etherlab/sbin/ethercatctl /usr/local/sbin/
+sudo ln -s /opt/etherlab/bin/ethercat /usr/local/bin/
+sudo ln -s /opt/etherlab/etc/ethercat.conf /etc/
+sudo vim /etc/ethercat.conf
+
+# upstart
+sudo ln -s /opt/etherlab/etc/init.d/ethercat /etc/init.d/
+sudo ln -s /opt/etherlab/bin/ethercat /usr/local/bin/
+sudo mkdir /etc/sysconfig
+sudo ln -s /opt/etherlab/etc/sysconfig/ethercat /etc/sysconfig/
+sudo vim /etc/sysconfig/ethercat
+
+sudo -i
+echo KERNEL==\"EtherCAT[0-9]*\", MODE=\"0664\" > /etc/udev/rules.d/99-EtherCAT.rules
+
