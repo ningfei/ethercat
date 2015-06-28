@@ -1,0 +1,13 @@
+Doxyfile
+Kbuild
+Makefile
+config.h
+config.log
+config.status
+.deps*
+Makefile
+libtool
+ethercat.service
+ethercatctl
+ethercat
+stamp-h1
